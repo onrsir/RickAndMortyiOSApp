@@ -25,11 +25,21 @@ final class RMCharacterCollectionViewCellViewModel {
     }
     
     public func loadImage(into imageView: UIImageView) {
-            if let url = characterImageUrl {
-                let options: KingfisherOptionsInfo = [.transition(.fade(0.3))]
-                imageView.kf.setImage(with: url, placeholder: nil, options: options)
-            } else {
-                imageView.image = nil
+        if let url = characterImageUrl {
+            let options: KingfisherOptionsInfo = [.transition(.fade(0.3))]
+            let resource = ImageResource(downloadURL: url)
+            KingfisherManager.shared.retrieveImage(with: resource, options: options) { result in
+                switch result {
+                case .success(let value):
+                    DispatchQueue.main.async {
+                        imageView.image = value.image
+                    }
+                case .failure(let error):
+                    print("Error: \(error)")
+                }
             }
+        } else {
+            imageView.image = nil
         }
+    }
 }

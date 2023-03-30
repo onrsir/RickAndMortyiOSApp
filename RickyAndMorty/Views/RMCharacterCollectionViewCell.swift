@@ -49,23 +49,46 @@ final class RMCharacterCollectionViewCell: UICollectionViewCell {
         NSLayoutConstraint.activate([
             statusLabel.heightAnchor.constraint(equalToConstant: 50),
             nameLabel.heightAnchor.constraint (equalToConstant: 50),
-            
+
             statusLabel.leftAnchor.constraint(equalTo: contentView.leftAnchor, constant: 5),
             statusLabel.rightAnchor.constraint (equalTo: contentView.rightAnchor, constant: -5),
             nameLabel.leftAnchor.constraint (equalTo: contentView.leftAnchor, constant: 5),
             nameLabel.rightAnchor.constraint (equalTo: contentView.rightAnchor, constant: -5),
-            
+
             statusLabel.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: -3),
-            nameLabel.bottomAnchor.constraint(equalTo: statusLabel.topAnchor, constant: -3),
-            
+            nameLabel.bottomAnchor.constraint(equalTo: statusLabel.topAnchor, constant: 25),
+
             imageView.topAnchor.constraint(equalTo: contentView.topAnchor),
             imageView.leftAnchor.constraint(equalTo: contentView.leftAnchor),
             imageView.rightAnchor.constraint(equalTo: contentView.rightAnchor),
             imageView.bottomAnchor.constraint(equalTo: nameLabel.topAnchor, constant: -3),
 
         ])
-        nameLabel.backgroundColor = .red
-        statusLabel.backgroundColor = .orange
+//        NSLayoutConstraint.activate([
+//            statusLabel.heightAnchor.constraint(equalToConstant: 50),
+//            nameLabel.heightAnchor.constraint(equalToConstant: 50),
+//
+//            statusLabel.leftAnchor.constraint(equalTo: contentView.leftAnchor, constant: 5),
+//            statusLabel.rightAnchor.constraint(equalTo: contentView.rightAnchor, constant: -5),
+//            statusLabel.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: -10),
+//
+//            nameLabel.leftAnchor.constraint(equalTo: contentView.leftAnchor, constant: 5),
+//            nameLabel.rightAnchor.constraint(equalTo: contentView.rightAnchor, constant: -5),
+//            nameLabel.bottomAnchor.constraint(equalTo: statusLabel.topAnchor, constant: -5),
+//            nameLabel.topAnchor.constraint(greaterThanOrEqualTo: contentView.topAnchor, constant: 10),
+//
+//            imageView.topAnchor.constraint(equalTo: contentView.topAnchor),
+//            imageView.leftAnchor.constraint(equalTo: contentView.leftAnchor),
+//            imageView.rightAnchor.constraint(equalTo: contentView.rightAnchor),
+//            imageView.bottomAnchor.constraint(equalTo: nameLabel.topAnchor, constant: -5)
+//        ])
+
+
+
+
+
+//        nameLabel.backgroundColor = .red
+//        statusLabel.backgroundColor = .orange
     }
  
                                                   
@@ -79,12 +102,7 @@ final class RMCharacterCollectionViewCell: UICollectionViewCell {
           
             nameLabel.text = viewmodel.characterName
             statusLabel.text = viewmodel.characterStatusText
-            if let url = viewmodel.characterImageUrl {
-                        let options: KingfisherOptionsInfo = [.transition(.fade(0.3))]
-                        imageView.kf.setImage(with: url, placeholder: nil, options: options)
-                    } else {
-                        imageView.image = nil
-                    }
+            viewmodel.loadImage(into: imageView)
                 
                 
             
