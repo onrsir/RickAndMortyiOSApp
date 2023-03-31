@@ -7,15 +7,15 @@
 
 import UIKit
 
-final class RMSettingsViewController: UIViewController {
+final class RMSettingsViewController: UIViewController, UINavigationControllerDelegate {
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
         view.backgroundColor = .systemBackground
-        title = "Settings"
-        
+        navigationController?.delegate = self
+        setCustomTitleView(title: "Settings", image: UIImage(named: "rmLogo"))
     }
-
+  
 
 }

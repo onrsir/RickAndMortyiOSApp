@@ -28,10 +28,14 @@
 		02BC519329D45EAC0058E040 /* RMGetAllCharactersResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02BC519229D45EAC0058E040 /* RMGetAllCharactersResponse.swift */; };
 		02BC519529D467BF0058E040 /* RMCharacterListViewViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02BC519429D467BF0058E040 /* RMCharacterListViewViewModel.swift */; };
 		02BC519729D47BED0058E040 /* RMCharacterListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02BC519629D47BED0058E040 /* RMCharacterListView.swift */; };
-		02BC519929D485050058E040 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02BC519829D485050058E040 /* Extensions.swift */; };
 		02BC519B29D4971D0058E040 /* RMCharacterCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02BC519A29D4971D0058E040 /* RMCharacterCollectionViewCell.swift */; };
 		02BC519D29D499910058E040 /* RMCharacterCollectionViewCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02BC519C29D499910058E040 /* RMCharacterCollectionViewCellViewModel.swift */; };
 		02BC51A029D4A4680058E040 /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = 02BC519F29D4A4680058E040 /* Kingfisher */; };
+		02BC51A229D6E61E0058E040 /* RMSplashViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02BC51A129D6E61E0058E040 /* RMSplashViewController.swift */; };
+		02BC51A429D6E8690058E040 /* RMSplashViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02BC51A329D6E8690058E040 /* RMSplashViewModel.swift */; };
+		02BC51A829D6FAEB0058E040 /* Lottie in Frameworks */ = {isa = PBXBuildFile; productRef = 02BC51A729D6FAEB0058E040 /* Lottie */; };
+		02BC51AA29D6FDC60058E040 /* animation.json in Resources */ = {isa = PBXBuildFile; fileRef = 02BC51A929D6FDC60058E040 /* animation.json */; };
+		02BC51AC29D71C060058E040 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02BC51AB29D71C060058E040 /* Extensions.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -77,9 +81,12 @@
 		02BC519229D45EAC0058E040 /* RMGetAllCharactersResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RMGetAllCharactersResponse.swift; sourceTree = "<group>"; };
 		02BC519429D467BF0058E040 /* RMCharacterListViewViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RMCharacterListViewViewModel.swift; sourceTree = "<group>"; };
 		02BC519629D47BED0058E040 /* RMCharacterListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RMCharacterListView.swift; sourceTree = "<group>"; };
-		02BC519829D485050058E040 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		02BC519A29D4971D0058E040 /* RMCharacterCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RMCharacterCollectionViewCell.swift; sourceTree = "<group>"; };
 		02BC519C29D499910058E040 /* RMCharacterCollectionViewCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RMCharacterCollectionViewCellViewModel.swift; sourceTree = "<group>"; };
+		02BC51A129D6E61E0058E040 /* RMSplashViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RMSplashViewController.swift; sourceTree = "<group>"; };
+		02BC51A329D6E8690058E040 /* RMSplashViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RMSplashViewModel.swift; sourceTree = "<group>"; };
+		02BC51A929D6FDC60058E040 /* animation.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = animation.json; sourceTree = "<group>"; };
+		02BC51AB29D71C060058E040 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -88,6 +95,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				02BC51A029D4A4680058E040 /* Kingfisher in Frameworks */,
+				02BC51A829D6FAEB0058E040 /* Lottie in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -115,6 +123,7 @@
 				02BC515A29D25F840058E040 /* RickyAndMortyTests */,
 				02BC516429D25F840058E040 /* RickyAndMortyUITests */,
 				02BC514229D25F810058E040 /* Products */,
+				02BC51A629D6FAEB0058E040 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -191,6 +200,7 @@
 			children = (
 				02BC519429D467BF0058E040 /* RMCharacterListViewViewModel.swift */,
 				02BC519C29D499910058E040 /* RMCharacterCollectionViewCellViewModel.swift */,
+				02BC51A329D6E8690058E040 /* RMSplashViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -219,7 +229,8 @@
 				02BC514629D25F810058E040 /* SceneDelegate.swift */,
 				02BC514D29D25F830058E040 /* Assets.xcassets */,
 				02BC514F29D25F830058E040 /* LaunchScreen.storyboard */,
-				02BC519829D485050058E040 /* Extensions.swift */,
+				02BC51A929D6FDC60058E040 /* animation.json */,
+				02BC51AB29D71C060058E040 /* Extensions.swift */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -227,6 +238,7 @@
 		02BC518129D262E40058E040 /* Core */ = {
 			isa = PBXGroup;
 			children = (
+				02BC51A129D6E61E0058E040 /* RMSplashViewController.swift */,
 				02BC514829D25F810058E040 /* RMTabBarController.swift */,
 				02BC518229D263340058E040 /* RMCharacterViewController.swift */,
 				02BC518429D263500058E040 /* RMLocationViewController.swift */,
@@ -254,6 +266,13 @@
 			path = APIResponseTypes;
 			sourceTree = "<group>";
 		};
+		02BC51A629D6FAEB0058E040 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -272,6 +291,7 @@
 			name = RickyAndMorty;
 			packageProductDependencies = (
 				02BC519F29D4A4680058E040 /* Kingfisher */,
+				02BC51A729D6FAEB0058E040 /* Lottie */,
 			);
 			productName = RickyAndMorty;
 			productReference = 02BC514129D25F810058E040 /* RickyAndMorty.app */;
@@ -347,6 +367,7 @@
 			mainGroup = 02BC513829D25F810058E040;
 			packageReferences = (
 				02BC519E29D4A4680058E040 /* XCRemoteSwiftPackageReference "Kingfisher" */,
+				02BC51A529D6F97A0058E040 /* XCRemoteSwiftPackageReference "lottie-spm" */,
 			);
 			productRefGroup = 02BC514229D25F810058E040 /* Products */;
 			projectDirPath = "";
@@ -364,6 +385,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				02BC51AA29D6FDC60058E040 /* animation.json in Resources */,
 				02BC515129D25F830058E040 /* LaunchScreen.storyboard in Resources */,
 				02BC514E29D25F830058E040 /* Assets.xcassets in Resources */,
 			);
@@ -403,11 +425,13 @@
 				02BC519529D467BF0058E040 /* RMCharacterListViewViewModel.swift in Sources */,
 				02BC518B29D303D20058E040 /* RMService.swift in Sources */,
 				02BC517C29D262540058E040 /* RMLocation.swift in Sources */,
+				02BC51AC29D71C060058E040 /* Extensions.swift in Sources */,
 				02BC517E29D2625F0058E040 /* RMCharacter.swift in Sources */,
 				02BC518D29D303DC0058E040 /* RMRequest.swift in Sources */,
-				02BC519929D485050058E040 /* Extensions.swift in Sources */,
+				02BC51A229D6E61E0058E040 /* RMSplashViewController.swift in Sources */,
 				02BC519329D45EAC0058E040 /* RMGetAllCharactersResponse.swift in Sources */,
 				02BC518329D263340058E040 /* RMCharacterViewController.swift in Sources */,
+				02BC51A429D6E8690058E040 /* RMSplashViewModel.swift in Sources */,
 				02BC519B29D4971D0058E040 /* RMCharacterCollectionViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -750,6 +774,14 @@
 				kind = branch;
 			};
 		};
+		02BC51A529D6F97A0058E040 /* XCRemoteSwiftPackageReference "lottie-spm" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/airbnb/lottie-spm.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 4.0.0;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -757,6 +789,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 02BC519E29D4A4680058E040 /* XCRemoteSwiftPackageReference "Kingfisher" */;
 			productName = Kingfisher;
+		};
+		02BC51A729D6FAEB0058E040 /* Lottie */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 02BC51A529D6F97A0058E040 /* XCRemoteSwiftPackageReference "lottie-spm" */;
+			productName = Lottie;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};
