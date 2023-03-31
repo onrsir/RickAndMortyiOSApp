@@ -7,7 +7,13 @@
 
 import UIKit
 
+protocol RMCharacterListViewViewModelDelegate:AnyObject {
+    func didLoadInitalCharacters()
+}
+
 final class RMCharacterListViewViewModel: NSObject {
+    public weak var delegate : RMCharacterListViewViewModelDelegate?
+    
     private var cellViewModels : [RMCharacterCollectionViewCellViewModel] = []
     private var characters : [RMCharacter] = [] {
         didSet {
@@ -30,6 +36,9 @@ final class RMCharacterListViewViewModel: NSObject {
             case .success(let responseModel):
                 let results = responseModel.results
                 self?.characters = results
+                DispatchQueue.main.async {
+                    self?.delegate?.didLoadInitalCharacters()
+                }
             case .failure(let error):
                 print(String(describing: error))
             }
@@ -46,7 +55,7 @@ extension RMCharacterListViewViewModel: UICollectionViewDataSource, UICollection
         guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: RMCharacterCollectionViewCell.cellIdentifier, for: indexPath) as? RMCharacterCollectionViewCell else {
             fatalError("Unsupported Cell")
         }
-        cell.backgroundColor = .systemGray
+//        cell.backgroundColor = .systemGray
         
         let viewModel = cellViewModels[indexPath.row]
         cell.configure(with: viewModel)

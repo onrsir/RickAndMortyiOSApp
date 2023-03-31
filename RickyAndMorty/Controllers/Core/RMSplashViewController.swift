@@ -39,7 +39,6 @@ final class RMSplashViewController: UIViewController, UINavigationControllerDele
 
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-
         DispatchQueue.main.asyncAfter(deadline: .now() + 2.4) {
             let rmTabBarVC = RMTabBarController()
             rmTabBarVC.modalPresentationStyle = .fullScreen

@@ -21,7 +21,7 @@ final class RMCharacterCollectionViewCellViewModel {
     }
     
     public var characterStatusText: String {
-        return characterStatus.rawValue
+        return characterStatus.text
     }
     
     public func loadImage(into imageView: UIImageView) {
